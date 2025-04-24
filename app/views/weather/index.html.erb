@@ -1,0 +1,45 @@
+<div>
+  <h1 class="font-bold text-4xl">Search Location</h1>
+</div>
+<div>
+  <%= form_with url: root_path, method: :get, local: true do |form| %>
+    <%= form.text_field 'city', placeholder: 'Enter city...',  class: "border border-gray-300 rounded mt-10 px-4 py-2 w-full"%>
+    <%= form.submit "Search", class: "mt-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"%>
+  <% end %>
+</div>
+<div>
+  <% if flash[:alert] %>
+    <div class="mt-6 bg-red-100 text-red-700 p-4 rounded mb-4">
+      <%= flash[:alert] %>
+    </div>
+  <% end %>
+</div>
+
+<% if @data %>
+  <div class="p-5 mt-6 flex flex-row justify-start content-center border rounded-xl border-gray-100 gap-6">
+    <div class="m-0 flex flex-col justify-start">
+      <h2 class="font-bold text-3xl mb-2">City</h2>
+      <p class="text-xl"><%= @data.name %></p>
+    </div>
+    <div class="m-0 flex flex-col justify-start">
+      <h2 class="font-bold text-3xl mb-2">Time</h2>
+      <p class="text-xl"><%= @data.dt %></p>
+    </div>
+    <div class="m-0 flex flex-col justify-start">
+      <h2 class="font-bold text-3xl mb-2">Temperature</h2>
+      <p class="text-xl"><%= @data.main.temp.floor %>c</p>
+    </div>
+    <div class="m-0 flex flex-col justify-start">
+      <h2 class="font-bold text-3xl mb-2">Feels like</h2>
+      <p class="text-xl"><%= @data.main.feels_like.floor %>c</p>
+    </div>
+    <div class="m-0 flex flex-col justify-start">
+      <h2 class="font-bold text-3xl mb-2">Daily Min</h2>
+      <p class="text-xl"><%= @data.main.temp_min.floor %>c</p>
+    </div>
+    <div class="m-0 flex flex-col justify-start">
+      <h2 class="font-bold text-3xl mb-2">Daily Max</h2>
+      <p class="text-xl"><%= @data.main.temp_max.floor %>c</p>
+    </div>
+  </div>
+<% end %>
