@@ -1,24 +1,46 @@
-# README
+# Project: OpenWeather API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### What's this
 
-Things you may want to cover:
+A simple app that displays realtime weather data using the OpenWeather API. It uses the OpenWeather API to get realtime weather data for cities around the world and display them on the page
 
-* Ruby version
+### Functionality
 
-* System dependencies
+This app uses the OpenWeather API to get realtime weather data for cities around the world.
 
-* Configuration
+### Built With
 
-* Database creation
+- Ruby on Rails - Web framework
+- dotenv-rails - Rails gem
+- open-weather-ruby-client - Rails gem
+- Tailwind CSS
 
-* Database initialization
+### Getting started
 
-* How to run the test suite
+To get started with the app, make sure you have Rails and Git installed on your machine  
+Clone the repo to your local machine: 
+```ruby
+$ git clone https://github.com/ruby-on-rails-ivancic/weather-app.git
+```
+Then, install the needed gems:
+```ruby
+$ bundle install
+```
+You'll need your OpenWeather API key which you will then place inside your .env file
+```ruby
+$ touch .env
+```
+Then, in your .env file
+```ruby
+$ OPENWEATHER_API_KEY=your_api_key_here
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Start the server:
+```ruby
+$ bin/dev
+```
+Open browser to view application:
+```ruby
+localhost:3000
+```
 
-* Deployment instructions
-
-* ...
