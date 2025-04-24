@@ -1,6 +1,6 @@
 # Project: OpenWeather API
 
-### What's this
+### Overview
 
 A simple app that displays realtime weather data using the OpenWeather API. It uses the OpenWeather API to get realtime weather data for cities around the world and display them on the page
 
